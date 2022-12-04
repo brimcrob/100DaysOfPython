@@ -36,23 +36,26 @@ Scissors win against paper
 Paper wins against rock
 both players draw the same go again.  
 """
-choice = [rock, paper, scissors]
-# create the generation of the computers choice
+# game images
+game_images = [rock, paper, scissors]
 
+player_chocie = int(input("Please enter 0 for rock, 1 for paper,  2 for scissors\n "))
+print(game_images[player_chocie])
+comp_choice = random.randint(0, 2)
+print(game_images[comp_choice])
 
-option_zero = choice[0]
-option_one = choice[1]
-option__two = choice[2]
-player_choice = input(
-    "Please enter 0 for rock, 1 for paper and 2 for scissors and 3 for paper\n "
-)
-
-if player_choice == choice[0]:
-    print(option_zero)
-elif player_choice == choice[1]:
-    print(option_one)
-elif player_choice == choice[2]:
-    print(option__two)
-
-# computer_go = random.choice(tuple(choice))
-# print(computer_go)
+# 0 = rock
+# 1 = scissors
+# 2 = paper
+if player_chocie == 0 and comp_choice == 2:
+    print("Player wins")
+elif comp_choice == 0 and player_chocie == 2:
+    print("You lost! ")
+elif comp_choice > player_chocie:
+    print("You lose! ")
+elif player_chocie > comp_choice:
+    print("You Win! ")
+elif comp_choice == player_chocie:
+    print("Its a draw. ")
+elif player_chocie >= 3 or player_chocie < 0:
+    print("You typed an invalid number, you lose ")
